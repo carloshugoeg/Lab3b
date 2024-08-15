@@ -38,7 +38,7 @@ namespace Lab3b
             Console.WriteLine("\nReservacion realizada en el " + Fecha.ToString());
             Console.WriteLine("\nCliente: " + Cliente.Nombre);
             Console.WriteLine("\nCorreo Cliente: " + Cliente.Correo);
-            foreach (Platillo platillo in Platillos) Console.WriteLine("\Platillo: " + platillo.Nombre);
+            foreach (Platillo platillo in Platillos) Console.WriteLine("\nPlatillo: " + platillo.Nombre);
             Console.WriteLine("\nTotal: Q." + Total);
         }
     }

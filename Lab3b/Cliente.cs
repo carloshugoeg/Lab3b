@@ -30,7 +30,7 @@ namespace Lab3b
             if (Descuento != -1) Console.WriteLine($"\nDescuento: {Descuento * 100}%");
             if (Reserva is not null)
             {
-                Console.WriteLine("Reserva: " Reserva.Id);
+                Console.WriteLine("Reserva: " + Reserva.Id);
             }
         }
         public virtual double AplicarDescuento(double precio)
@@ -49,5 +49,4 @@ namespace Lab3b
         public virtual void AsignarReserva(Reserva reserva) => Reserva = reserva;
     }
 }
-    }
-}
+  

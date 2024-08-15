@@ -35,19 +35,13 @@ do
             break;
         case "5":
             Console.Clear();
-            Console.WriteLine("-----BUSCAR CLIENTE-----");
+
             BuscarCliente(clientes);
             break;
         case "6":
-           
-            break;
-        case "7":
-            
-        case "8":
             Console.Clear();
-            BuscarVehiculo(vehiculos);
+            BuscarPedido(reservas);
             break;
-
     }
 } while (true);
 void RegistrarCliente(List<Cliente> clientes)
@@ -168,6 +162,7 @@ void DetallesPedidos(List<Reserva> reservas)
 }
 void BuscarCliente(List<Cliente> clientes)
 {
+    Console.WriteLine("-----BUSCAR CLIENTE-----");
     Console.Write("\nIngrese Nombre Completo del cliente: ");
     string nombrebuscado = Console.ReadLine();
     bool encontrado = false;
