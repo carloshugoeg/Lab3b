@@ -8,11 +8,11 @@ namespace Lab3b
 {
     internal class Cliente
     {
-        public Cliente(string nombre, string correo, string direccion, double descuento)
+        public Cliente(string nombre, string correo, string telefono, double descuento)
         {
             Nombre = nombre;
             Correo = correo;
-            Telefono = Telefono;
+            Telefono = telefono;
             Descuento = descuento;
         }
 
