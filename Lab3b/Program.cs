@@ -26,24 +26,23 @@ do
             RegistrarReserva(reservas, numeroPedido, clientes);
             break;
         case "3":
-
-        case "4":
             Console.Clear();
             DetallesClientes(clientes);
             break;
+        case "4":
+            Console.Clear();
+            DetallesPedidos(reservas);
+            break;
         case "5":
-            Console.Clear();
-            DetallesVehiculos(vehiculos);
-            break;
-        case "6":
-            Console.Clear();
-            DetallesPedidos(pedidos);
-            break;
-        case "7":
             Console.Clear();
             Console.WriteLine("-----BUSCAR CLIENTE-----");
             BuscarCliente(clientes);
             break;
+        case "6":
+           
+            break;
+        case "7":
+            
         case "8":
             Console.Clear();
             BuscarVehiculo(vehiculos);
@@ -139,4 +138,69 @@ void RegistrarReserva(List<Reserva> reservas, int noPedido, List<Cliente> client
     Console.WriteLine("Presione ENTER para continuar");
     Console.ReadLine();
 
+}
+void DetallesClientes(List<Cliente> clientes)
+{
+    Console.WriteLine("-------DETALLES CLIENTES--------");
+    foreach (Cliente cliente in clientes)
+    {
+        Console.WriteLine("");
+        cliente.MostrarInformacion();
+        Console.WriteLine("");
+        Console.WriteLine("----------------------");
+    }
+    Console.WriteLine("Presione ENTER para continuar");
+    Console.ReadLine();
+}
+void DetallesPedidos(List<Reserva> reservas)
+{
+    Console.WriteLine("----------DETALLES RESERVAS--------\n\n");
+    foreach (Reserva reserva in reservas)
+    {
+
+        Console.WriteLine("");
+        reserva.MostrarInformacion();
+        Console.WriteLine("");
+        Console.WriteLine("----------------------");
+    }
+    Console.WriteLine("Presione ENTER para continuar");
+    Console.ReadLine();
+}
+void BuscarCliente(List<Cliente> clientes)
+{
+    Console.Write("\nIngrese Nombre Completo del cliente: ");
+    string nombrebuscado = Console.ReadLine();
+    bool encontrado = false;
+    foreach (Cliente cliente in clientes)
+    {
+        if (cliente.Nombre.ToLower().Trim().Equals(nombrebuscado.ToLower().Trim()))
+        {
+            Console.WriteLine("---------------\n");
+            cliente.MostrarInformacion();
+            Console.WriteLine("\n---------------");
+            encontrado = true;
+        }
+    }
+    if (!encontrado) Console.WriteLine("\nCliente no fue encontrado");
+    Console.WriteLine("Presione ENTER para continuar");
+    Console.ReadLine();
+}
+void BuscarPedido(List<Reserva> reservas)
+{
+    Console.Write("\nIngrese numero de reserva: ");
+    int numeroPedido = int.Parse(Console.ReadLine());
+    bool encontrado = false;
+    foreach (Reserva reserva in reservas)
+    {
+        if (reserva.Id == numeroPedido)
+        {
+            Console.WriteLine("---------------\n");
+            reserva.MostrarInformacion();
+            Console.WriteLine("\n---------------");
+            encontrado = true;
+        }
+    }
+    if (!encontrado) Console.WriteLine("\nReserva no fue encontrado");
+    Console.WriteLine("Presione ENTER para continuar");
+    Console.ReadLine();
 }
